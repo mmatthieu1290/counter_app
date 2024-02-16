@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http; */
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:counter_app/providers/providers.dart';
+import 'package:counter_app/widgets/widgets.dart';
 
 /* Future<String> requestDate() async {
   final url = Uri.parse(
@@ -16,7 +17,8 @@ import 'package:counter_app/providers/providers.dart';
 } */
 
 class CounterScreen extends ConsumerWidget {
-  const CounterScreen({super.key});
+  final String id;
+  const CounterScreen(this.id, {super.key});
 
   /* late Future<String> myDate;
   @override
@@ -31,6 +33,7 @@ class CounterScreen extends ConsumerWidget {
     final notifier = ref.watch(counterProvider.notifier);
     return Scaffold(
       backgroundColor: Colors.amber[900],
+      drawer: const CustomDrawer(),
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Mi nueva app'),

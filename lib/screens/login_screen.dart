@@ -1,13 +1,18 @@
 import 'package:counter_app/providers/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:counter_app/widgets/widgets.dart';
+//import 'package:go_router/go_router.dart';
 
 class LoginScreen extends StatelessWidget {
+  //final String id;
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
+      drawer: const CustomDrawer(),
       backgroundColor: Colors.green,
       body: const SizedBox(
         width: double.infinity,
@@ -34,14 +39,16 @@ class LoginScreen extends StatelessWidget {
               icon: Image.asset('assets/asistencia.png'), label: 'Asistencia'),
         ],
         onTap: (value) {
-          print("muestra $value");
+/*           print("muestra $value");
           switch (value) {
             case 0:
               Navigator.pushNamed(context, "/counter");
               break;
+            case 2:
+              Navigator.pushNamed(context, "/signin");
             default:
               break;
-          }
+          } */
         },
       ),
     );
